@@ -1,0 +1,6 @@
+FROM mysql
+ENV MYSQL_ROOT_PASSWORD 1234
+ENV MYSQL_DATABASE test1
+COPY ./db/data /var/lib/mysql
+EXPOSE 3306
+
