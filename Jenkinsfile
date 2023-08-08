@@ -10,6 +10,7 @@ pipeline{
 
     			    sh """
     			    	git clone https://github.com/Jooyeon-94/project0630.git
+    			    	chmod +x gradlew
     			    	cd project0630 
     			    	./gradlew clean build -x test
     			    """
