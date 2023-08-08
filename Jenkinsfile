@@ -16,7 +16,17 @@ pipeline{
     			    """
     		    }    	                  
     	    }
-    	}		
+    	}
+    	stage('Prepare') {
+    	    steps{
+    		    script{
+    			    sh """
+    			        cp project0630/build/libs/project0630-0.0.1-SNAPSHOT.jar ../../
+    			    	docker-compose up
+    			    """
+    		    }    	                  
+    	    }
+    	}		    			
     	stage('API Test') {
     		steps{
     			script{
