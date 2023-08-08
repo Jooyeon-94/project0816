@@ -7,10 +7,11 @@ pipeline{
     	    steps{
     		    script{
     		    	cleanWs()
-    		    	pwd = sh(script: "pwd", returnStdout:true).trim()
+
     			    sh """
     			    	git clone https://github.com/Jooyeon-94/project0630.git
-    			    	cd ${pwd} ./gradlew clean build -x test
+    			    	cd project0630 
+    			    	./gradlew clean build -x test
     			    """
     		    }    	                  
     	    }
@@ -19,7 +20,7 @@ pipeline{
     		steps{
     			script{
     				try{
-    					sh "newman run ${pwd}/project0630/Test_pass.postman_collection.json --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'"   				
+    					sh "newman run project0630/Test_pass.postman_collection.json --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'"   				
     				}catch(err){
     					println("test error : ${err}")
     					sh "exit 0"
