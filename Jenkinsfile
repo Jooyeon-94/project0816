@@ -7,14 +7,17 @@ pipeline{
     	    steps{
     		    script{
     		    	cleanWs()
-    			    sh "git clone https://github.com/Jooyeon-94/project0630.git"
+    		    	pwd = sh(script: "pwd", returnStdout:true).trim()
+    			    sh """
+    			    	git clone https://github.com/Jooyeon-94/project0630.git
+    			    	cd ${pwd} ./gradlew clean build -x test
+    			    """
     		    }    	                  
     	    }
     	}		
     	stage('API Test') {
     		steps{
     			script{
-    			    pwd = sh(script: "pwd", returnStdout:true).trim()
     				try{
     					sh "newman run ${pwd}/project0630/Test_pass.postman_collection.json --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'"   				
     				}catch(err){
