@@ -21,6 +21,7 @@ pipeline{
     	    steps{
     		    script{
     			    sh """
+    			        cd project0630
     			        cp project0630/build/libs/project0630-0.0.1-SNAPSHOT.jar ../../
     			    	docker-compose up
     			    """
