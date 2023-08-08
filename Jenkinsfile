@@ -17,7 +17,7 @@ pipeline{
     		    }    	                  
     	    }
     	}
-    	stage('Prepare') {
+    	stage('Docker') {
     	    steps{
     		    script{
     			    sh """
