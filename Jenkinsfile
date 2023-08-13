@@ -36,7 +36,7 @@ pipeline{
     		steps{
     			script{
     				try{
-    					sh "newman run project0630/Test_pass.postman_collection.json --bain --timeout-request 1800000 --timeout-script 1800000 --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'"   				
+    					sh "newman run project0630/Test_pass.postman_collection.json --bail --timeout-request 1800000 --timeout-script 1800000 --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'"   				
     				}catch(err){
     					println("test error : ${err}")
     					sh "exit 0"
