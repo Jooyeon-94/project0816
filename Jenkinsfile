@@ -23,6 +23,7 @@ pipeline{
     			    sh """
     			        cd project0630
     			        cp Dockerfile build/libs
+    			        docker-compose --version
     			    	docker-compose up -d
     			    """
     		    }    	                  
