@@ -74,7 +74,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://0.0.0.0:8080/read?name=jooyeonz",
+					"raw": "http://0.0.0.0:8080/read?name=jooyeon",
 					"protocol": "http",
 					"host": [
 						"0",
@@ -94,7 +94,7 @@
 						},
 						{
 							"key": "name",
-							"value": "jooyeonz"
+							"value": "jooyeon"
 						}
 					]
 				}
