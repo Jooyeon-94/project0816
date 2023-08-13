@@ -29,9 +29,9 @@ pipeline{
     			        docker-compose --version
     			    	docker-compose up -d
     			    """
-			    sleep 10s
-    		    }    	                  
-    	    }
+    		    }
+		    sleep(time: 10, unit: 'SECONDS')
+	    }
     	}		    			
     	stage('API Test') {
     		steps{
