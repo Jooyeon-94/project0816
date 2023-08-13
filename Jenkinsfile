@@ -2,6 +2,9 @@ pipeline{
   agent {
     label "node1"
   }    
+  environment {
+    PATH = "$PATH:/usr/local/bin"
+  }  
 	stages{
     	stage('Prepare') {
     	    steps{
