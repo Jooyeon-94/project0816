@@ -74,10 +74,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/read?name=jooyeon",
+					"raw": "http://0.0.0.0:8080/read?name=jooyeonz",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"0",
+						"0",
+						"0",
+						"0"
 					],
 					"port": "8080",
 					"path": [
@@ -91,7 +94,7 @@
 						},
 						{
 							"key": "name",
-							"value": "jooyeon"
+							"value": "jooyeonz"
 						}
 					]
 				}
@@ -117,10 +120,13 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/update?name=jooyeon2&pw=2345&id=1",
+					"raw": "http://0.0.0.0:8080/update?name=jooyeon2&pw=2345&id=1",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"0",
+						"0",
+						"0",
+						"0"
 					],
 					"port": "8080",
 					"path": [
@@ -163,10 +169,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/delete?id=2",
+					"raw": "http://0.0.0.0:8080/delete?id=2",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"0",
+						"0",
+						"0",
+						"0"
 					],
 					"port": "8080",
 					"path": [
