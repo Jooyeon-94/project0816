@@ -31,7 +31,7 @@ pipeline{
     			    """
     		    }
 		    sleep(time: 10, unit: 'SECONDS')
-	    }
+	    	}
     	}		    			
     	stage('API Test') {
     		steps{
@@ -40,16 +40,17 @@ pipeline{
     					sh "newman run project0630/Test_pass.postman_collection.json --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'"   				
     				}catch(err){
     					println("test error : ${err}")
-    					sh "exit 0"
     				}		
     			}
 			}           	
-    	}	
-    	stage('Result') {
-    		steps{
-    			junit '**/newman/NEWMAN-myreport.xml'
-    		}           	
-    	}	
+    	}	           		
 	}
+  post {
+    always {
+      script{
+        junit '**/newman/NEWMAN-myreport.xml'
+      }
+    }
+  }	
 }
 
