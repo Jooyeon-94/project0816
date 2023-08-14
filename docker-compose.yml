@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   database: 
-    image: mysql
+    image: jooh777/mysql:0.1
     restart: always
     container_name: mysqldb
     environment:
@@ -14,7 +14,7 @@ services:
       - ~/db/data:/usr/local/var/mysql:rw
       - ~/db/conf:/usr/local/etc:rw
   webapp:
-    image: webapp-project
+    image: jooh777/webapp-project:0.1
     build:
       context: ./build/libs
       dockerfile: Dockerfile
