@@ -40,6 +40,7 @@ pipeline{
     					sh """
     			                    cd project0630
 			                    docker-compose up -d
+		                            sleep 10
 	 				    newman run Test_pass.postman_collection.json --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'
 				        """   				
     				}catch(err){
