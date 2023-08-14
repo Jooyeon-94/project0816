@@ -25,13 +25,10 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://0.0.0.0:8080/create?name=jooyeon&pw=12345",
+					"raw": "http://localhost:8080/create?name=jooyeon&pw=12345",
 					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"localhost"
 					],
 					"port": "8080",
 					"path": [
