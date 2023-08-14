@@ -53,7 +53,10 @@ pipeline{
   post {
     always {
       script{
-	sh "docker-compose down"
+	sh """
+            cd project0630
+	    docker-compose down
+        """
         junit '**/newman/NEWMAN-myreport.xml'
       }
     }
