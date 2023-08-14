@@ -39,7 +39,8 @@ pipeline{
     				try{
     					sh """
     			                    cd project0630
-	 				    newman run project0630/Test_pass.postman_collection.json --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'
+			                    docker-compose up -d
+	 				    newman run Test_pass.postman_collection.json --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'
 				        """   				
     				}catch(err){
     					println("test error : ${err}")
