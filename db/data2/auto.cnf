@@ -1,0 +1,7 @@
+[auto]
+server-uuid=817057bf-19a7-11ee-a86e-0242ac110003
+
+[mysqld]
+lower_case_table_names=2
+
+bind-address 0.0.0.0

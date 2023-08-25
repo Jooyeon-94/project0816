@@ -11,9 +11,9 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ~/db/data:/usr/local/var/mysql:rw
-      - ~/db/conf:/usr/local/etc:rw
-  webapp:
+      - ~/db2/data:/usr/local/var/mysql:rw
+      - ~/db2/conf:/usr/local/etc:rw
+  webapp1:
     image: jooh777/webapp-project:0.1
     build:
       context: ./build/libs
@@ -21,6 +21,20 @@ services:
     restart: always
     ports:
       - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/mysql?useSSL=false&allowPublicKeyRetrieval=true&serverTimeZone=UTC&CharacterEncoding=UTF-8
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+    depends_on:
+      - database
+  webapp2:
+    image: jooh777/webapp-project2:0.1
+    build:
+      context: ./build/libs
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 9000:9000
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/mysql?useSSL=false&allowPublicKeyRetrieval=true&serverTimeZone=UTC&CharacterEncoding=UTF-8
       SPRING_DATASOURCE_USERNAME: root

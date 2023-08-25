@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "f33a2bad-4a1f-4806-b0c5-9ca0e6608938",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28112770"
+	},
+	"item": [
+		{
+			"name": "create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.45.129:9000/create?name=jooyeon&pw=12345",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"45",
+						"129"
+					],
+					"port": "9000",
+					"path": [
+						"create"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "jooyeon"
+						},
+						{
+							"key": "pw",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"user name jooyeon exists\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"jooyeon\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.45.129:9000/read?name=jooyeon",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"45",
+						"129"
+					],
+					"port": "9000",
+					"path": [
+						"read"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "jooyeon"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.45.129:9000/update?name=jooyeon2&pw=2345&id=1",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"45",
+						"129"
+					],
+					"port": "9000",
+					"path": [
+						"update"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "jooyeon2"
+						},
+						{
+							"key": "pw",
+							"value": "2345"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"No id 2 in user table\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.45.129:9000/delete?id=2",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"45",
+						"129"
+					],
+					"port": "9000",
+					"path": [
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.45.129:9000/readall",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"45",
+						"129"
+					],
+					"port": "9000",
+					"path": [
+						"readall"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
