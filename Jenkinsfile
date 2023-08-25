@@ -21,7 +21,7 @@ pipeline{
     	    }
     	}
     	stage('Docker') {
-    	    steps{m
+    	    steps{
     		    script{
     			    sh """
     			        cd project0816
