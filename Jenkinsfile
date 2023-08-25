@@ -12,8 +12,8 @@ pipeline{
     		    	cleanWs()
 
     			    sh """
-    			    	git clone https://github.com/Jooyeon-94/project0630.git
-    			    	cd project0630 
+    			    	git clone https://github.com/Jooyeon-94/project0816.git
+    			    	cd project0816
     			    	chmod +x gradlew    			    	
     			    	./gradlew clean build -x test
     			    """
@@ -21,10 +21,10 @@ pipeline{
     	    }
     	}
     	stage('Docker') {
-    	    steps{
+    	    steps{m
     		    script{
     			    sh """
-    			        cd project0630
+    			        cd project0816
     			        cp Dockerfile build/libs
     			        docker-compose --version
     			    	docker-compose up -d
@@ -38,10 +38,10 @@ pipeline{
     			script{
     				try{
     					sh """
-    			                    cd project0630
-			                    docker-compose up -d
-		                            sleep 10
-	 				    newman run Test_pass.postman_collection.json --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'
+    			            cd project0816
+			                docker-compose up -d
+		                    sleep 10
+	 				        newman run App1_postman_collection.json --reporters cli,junit --reporter-junit-export 'newman/NEWMAN-myreport.xml'
 				        """   				
     				}catch(err){
     					println("test error : ${err}")
@@ -53,11 +53,11 @@ pipeline{
   post {
     always {
       script{
-	sh """
-            cd project0630
-	    docker-compose down
-        """
-        junit '**/newman/NEWMAN-myreport.xml'
+	         sh """
+                 cd project0816
+	             docker-compose down
+               """
+             junit '**/newman/NEWMAN-myreport.xml'
       }
     }
   }	
