@@ -74,7 +74,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://192.168.45.129:8080/read?name=jooyeon",
+					"raw": "http://192.168.45.129:9000/read?name=jooyeon",
 					"protocol": "http",
 					"host": [
 						"192",
@@ -169,7 +169,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://192.168.45.129:8080/delete?id=2",
+					"raw": "http://192.168.45.129:9000/delete?id=2",
 					"protocol": "http",
 					"host": [
 						"192",
